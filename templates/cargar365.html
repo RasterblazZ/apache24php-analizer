@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de carga365</title>
+    <link rel="stylesheet" type="text/css" href="/static/app.css">
+    
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Carga de distribuciones</a></li>
+            <li><a href="/showDist">Ver Carga Actual</a></li>
+            <li><a href="/cargarDatos">Cargar Datos 365</a></li>
+        </ul>
+    </div>
+
+    <h1>Formulario de carga</h1>
+    <form action="/execute365" method="POST">
+        <div class="form-group">
+            <label for="archivo">Actualizar tabla intermedia 365</label>
+            <input type="submit" class="btn btn-primary" value="Enviar datos">
+        </div>
+    </form>
+
+</body>
+</html>

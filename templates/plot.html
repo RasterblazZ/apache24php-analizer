@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Report</title>
+</head>
+<body>
+    <img src="data:image/png;base64,{{ plot }}" alt="Gráfico">
+    <h3>Listado de errores (php7:error)</h3>
+    <ul>
+        {% for valor in errolist %}
+        <li>
+            {{ valor }}
+            {% for valorhijo in errorlist_detail %}
+                {% if(valorhijo[0] == valor) %}
+                <ul>
+                    <li>{{ valorhijo[1] }}</li>
+                </ul>
+                {% endif %}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

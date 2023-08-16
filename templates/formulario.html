@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Apache Viewer</title>
+    <link rel="stylesheet" type="text/css" href="/static/app.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Upload log</a></li>
+        </ul>
+    </div>
+    <h1>Choose an apache error log from your computer or server</h1>
+    <form action="/cargarDatos" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="archivo">Archivo:</label>
+            <input type="file" name="archivo" id="archivo" class="form-control">
+            <input type="submit" class="btn btn-primary" value="Enviar archivo">
+        </div>
+    </form>
+
+    <div id="progress"></div>
+</body>
+</html>

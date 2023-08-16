@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de productos</title>
+	<link rel="stylesheet" type="text/css" href="/static/app.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+	<div class="navbar">
+        <ul>
+            <li><a href="/">Carga de distribuciones</a></li>
+            <li><a href="/showDist">Ver Carga Actual</a></li>
+            <li><a href="/cargarDatos">Cargar Datos 365</a></li>
+        </ul>
+    </div>
+    <h1 style="font-size: x-large;">Productos cargados</h1>
+	<table class="text-left text-sm font-light">
+	<thead class="border-b font-medium dark:border-neutral-500">
+		<tr>
+		<th scope="col" class="px-6 py-4">Tienda</th>
+		<th scope="col" class="px-6 py-4">Fecha</th>
+		<th scope="col" class="px-6 py-4">Articulo</th>
+		<th scope="col" class="px-6 py-4">Cantidad</th>
+		<th scope="col" class="px-6 py-4">Nombre Producto</th>
+		<th scope="col" class="px-6 py-4">Nombre Tienda</th>
+		<th scope="col" class="px-6 py-4">Tienda 365</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for dist in distribution %}
+		<tr class="border-b dark:border-neutral-500">
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.CODIGO_TIENDA}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.FECHA}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.CODIGO_ART}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.CANTIDAD}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.NOMBREPRODUCTO}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.NOMBRETIENDA}}</td>
+		<td class="whitespace-nowrap px-6 py-4 font-medium">{{ dist.TIENDAD365}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</body>
+</html>
